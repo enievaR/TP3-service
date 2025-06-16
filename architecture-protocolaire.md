@@ -11,12 +11,12 @@ Complétez cette fiche pour décrire comment les clients interagissent avec le s
 | **Commande**  | **Syntaxe exacte**       | **Effet attendu**         | **Réponse du serveur**        | **Responsable côté serveur** |
 |---------------|---------------------------|----------------------------|--------------------------------|-------------------------------|
 | `/nick`       | `/nick <pseudo>`          | Attribue un pseudo unique  | Message de bienvenue ou erreur | `set_pseudo()`                |
-| `/join`       |                           |                            |                                |                               |
-| `/msg`        |                           |                            |                                |                               |
+| `/join`       | `/join <canal>`           | Rejoint un canal           | <Pseudo> a rejoint le canal X  | `rejoindre_canal()`           |
+| `/msg`        | `/msg <message>`          | Envoie un message sur le canal courant | Aucune réponse du serveur au client affichée, mais le message "Message de <pseudo> sur #<canal> : <message>" est visible sur le serveur                              | `envoyer_message()`           |
 | `/read`       |                           |                            |                                |                               |
 | `/log`        |                           |                            |                                |                               |
 | `/alert`      |                           |                            |                                |                               |
-| `/quit`       |                           |                            |                                |                               |
+| `/quit`       | /quit                          | Déconnecte l'utilisateur courant du serveur                           | Aucune réponse du serveur au client affichée, mais le message "<pseudo> s'est déconnecté" est visible sur le serveur                              | `IRCHandler()`                              |
 
 ## Exemples d’interactions
 
